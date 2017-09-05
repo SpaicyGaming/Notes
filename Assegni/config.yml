@@ -5,6 +5,7 @@ note:
   material: PAPER
   data: 0
   name: "&lBanknote"
+  enchanted: true
   lore:
   - "$[money]"
   - "Withdrawn by [player]"

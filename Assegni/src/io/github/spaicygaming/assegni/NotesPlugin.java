@@ -6,6 +6,7 @@ import io.github.spaicygaming.assegni.command.WithdrawCommand;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -167,8 +168,12 @@ public class NotesPlugin extends JavaPlugin {
         ItemStack ret = base.clone();
         ItemMeta meta = ret.getItemMeta();
         meta.setLore(formatLore);
+        
+        if (getConfig().getBoolean("note.enchanted")){
+        	meta.addEnchant(Enchantment.DURABILITY, 10, true);
+        }
+        
         ret.setItemMeta(meta);
-
         return ret;
     }
 
