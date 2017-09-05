@@ -4,7 +4,6 @@ import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -27,7 +26,7 @@ public class PlayerListener implements Listener {
         this.plugin = plugin;
     }
 
-    @EventHandler(priority = EventPriority.MONITOR)
+    @EventHandler
     public void onPlayerClaimNote(PlayerInteractEvent event) {
         // Check if we need to use /deposit or if we can right click
         if (!plugin.getConfig().getBoolean("settings.allow-right-click-to-deposit-notes", true)) {

@@ -3,7 +3,7 @@ version: 1.8.0
 description: A plugin to withdraw money and store it as a paper notes
 author: SainttX
 
-main: com.sainttx.banknotes.BanknotePlugin
+main: io.github.spaicygaming.assegni.NotesPlugin
 depend: [ Vault ]
 
 commands:

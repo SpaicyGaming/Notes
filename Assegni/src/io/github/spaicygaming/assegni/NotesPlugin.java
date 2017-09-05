@@ -181,13 +181,30 @@ public class NotesPlugin extends JavaPlugin {
     public boolean isBanknote(ItemStack itemstack) {
         if (itemstack.getType() == base.getType() && itemstack.getDurability() == base.getDurability()
                 && itemstack.getItemMeta().hasDisplayName() && itemstack.getItemMeta().hasLore()) {
+        	
             String display = itemstack.getItemMeta().getDisplayName();
-            List<String> lore = itemstack.getItemMeta().getLore();
-
+            List<String> itemLore = removeValue(itemstack.getItemMeta().getLore());
+            
+            List<String> configLores = removeValue(getConfig().getStringList("note.lore"));
+            
             // The size thing for the lore is a bit ghetto
-            return display.equals(colorMessage(getConfig().getString("note.name"))) && lore.size() == getConfig().getStringList("note.lore").size();
+            return display.equals(colorMessage(getConfig().getString("note.name"))) && itemLore.equals(configLores);
         }
         return false;
+    }
+    
+    private List<String> removeValue(List<String> lores){
+    	// toglie la parte dopo il $
+    	List<String> coloredConfigLores = new ArrayList<>();
+        for (String str : lores){
+        	String output = str;
+        	if (str.contains("$")){
+        		int index = str.indexOf("$");
+        		output = str.substring(0, index);
+        	}
+        	coloredConfigLores.add(colorMessage(output));
+        }
+        return coloredConfigLores;
     }
 
     /**
