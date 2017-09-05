@@ -1,4 +1,4 @@
-package com.sainttx.notes;
+package io.github.spaicygaming.assegni;
 
 import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.ChatColor;

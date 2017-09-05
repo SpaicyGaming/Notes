@@ -1,6 +1,6 @@
-package com.sainttx.notes.command;
+package io.github.spaicygaming.assegni.command;
 
-import com.sainttx.notes.NotesPlugin;
+import io.github.spaicygaming.assegni.NotesPlugin;
 import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;

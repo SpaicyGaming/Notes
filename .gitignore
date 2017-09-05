@@ -1,34 +1,22 @@
-# Eclipse stuff
-/.classpath
-/.project
-/.settings
+# Compiled class file
+*.class
 
-# netbeans
-/nbproject
+# Log file
+*.log
 
-# we use maven!
-/build.xml
+# BlueJ files
+*.ctxt
 
-# maven
-/target
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
 
-# vim
-.*.sw[a-p]
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
 
-# various other potential build files
-/build
-/bin
-/dist
-/manifest.mf
-
-/world
-
-# Mac filesystem dust
-/.DS_Store
-*.DS_Store
-
-# intellij
-*.iml
-*.ipr
-*.iws
-.idea/
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*

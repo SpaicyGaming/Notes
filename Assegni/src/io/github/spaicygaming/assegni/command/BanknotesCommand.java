@@ -1,6 +1,6 @@
-package com.sainttx.notes.command;
+package io.github.spaicygaming.assegni.command;
 
-import com.sainttx.notes.NotesPlugin;
+import io.github.spaicygaming.assegni.NotesPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

@@ -1,8 +1,8 @@
-package com.sainttx.notes;
+package io.github.spaicygaming.assegni;
 
-import com.sainttx.notes.command.BanknotesCommand;
-import com.sainttx.notes.command.DepositCommand;
-import com.sainttx.notes.command.WithdrawCommand;
+import io.github.spaicygaming.assegni.command.BanknotesCommand;
+import io.github.spaicygaming.assegni.command.DepositCommand;
+import io.github.spaicygaming.assegni.command.WithdrawCommand;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
