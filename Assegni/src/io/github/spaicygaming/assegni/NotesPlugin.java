@@ -37,6 +37,8 @@ public class NotesPlugin extends JavaPlugin {
      * Vault economy implementation
      */
     private Economy economy;
+    
+    private String prefix = ChatColor.translateAlternateColorCodes('&', getConfig().getString("messages.prefix")) + " " + ChatColor.RESET;
 
     /*
      * REGEX to find money
@@ -124,7 +126,7 @@ public class NotesPlugin extends JavaPlugin {
             return path;
         }
 
-        return ChatColor.translateAlternateColorCodes('&', getConfig().getString(path));
+        return prefix + ChatColor.translateAlternateColorCodes('&', getConfig().getString(path));
     }
 
     /**
@@ -183,7 +185,7 @@ public class NotesPlugin extends JavaPlugin {
             List<String> lore = itemstack.getItemMeta().getLore();
 
             // The size thing for the lore is a bit ghetto
-            return display.equals(this.getMessage("note.name")) && lore.size() == getConfig().getStringList("note.lore").size();
+            return display.equals(colorMessage(getConfig().getString("note.name"))) && lore.size() == getConfig().getStringList("note.lore").size();
         }
         return false;
     }
@@ -200,7 +202,7 @@ public class NotesPlugin extends JavaPlugin {
             String display = itemstack.getItemMeta().getDisplayName();
             List<String> lore = itemstack.getItemMeta().getLore();
 
-            if (display.equals(this.getMessage("note.name"))) {
+            if (display.equals(colorMessage(getConfig().getString("note.name")))) {
                 for (String money : lore) {
                     Matcher matcher = MONEY_PATTERN.matcher(money);
 

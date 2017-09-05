@@ -10,6 +10,7 @@ note:
   - "Withdrawn by [player]"
 
 messages:
+  prefix: "&8[&bBankNotes&8]"
   insufficient-funds: "You do not have enough money to withdraw this amount"
   insufficient-permissions: "You do not have enough permissions"
   inventory-full: "Please have a space open in your inventory to create a banknote"
