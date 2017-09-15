@@ -26,6 +26,7 @@ messages:
   more-than-maximum: "The amount you entered is more than the maximum allowed amount of $[money]"
   reloaded: "The Banknotes config.yml has been reloaded"
   target-not-found: "Couldn't find a player with that name"
+  survivalOnly: "&cYou can deposit banknotes only in surival mode"
   
 settings:
   console-name: "&7Server"
