@@ -2,6 +2,7 @@ package io.github.spaicygaming.assegni;
 
 import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -51,6 +52,12 @@ public class PlayerListener implements Listener {
         // Verify that this is a real banknote
         if (item == null || !plugin.isBanknote(item)) {
             return;
+        }
+        
+        // Prevent players from deposit bank notes in a gamemode
+        if (player.getGameMode() != GameMode.SURVIVAL){
+        	player.sendMessage(plugin.getMessage("messages.survivalOnly"));
+        	return;
         }
 
         double amount = plugin.getBanknoteAmount(item);
