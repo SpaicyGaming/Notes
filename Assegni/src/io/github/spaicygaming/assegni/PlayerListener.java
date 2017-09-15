@@ -38,12 +38,14 @@ public class PlayerListener implements Listener {
             return;
         }
 
+        Player player = event.getPlayer();
+        
         // Check if the player is allowed to deposit bank notes
-        if (!event.getPlayer().hasPermission("banknotes.deposit")) {
+        if (!player.hasPermission("banknotes.deposit")) {
+        	player.sendMessage(plugin.getMessage("messages.insufficient-permissions"));
             return;
         }
-
-        Player player = event.getPlayer();
+        
         ItemStack item = event.getPlayer().getItemInHand();
 
         // Verify that this is a real banknote

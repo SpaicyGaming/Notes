@@ -9,6 +9,7 @@ depend: [ Vault ]
 commands:
   withdraw:
     description: Withdraw money as a note
+    aliases: [assegni, assegno]
     usage: |
            Withdraw money from your bank account as a note.
            /<command> [amount]
